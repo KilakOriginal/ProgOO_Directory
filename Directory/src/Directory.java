@@ -37,7 +37,7 @@ public class Directory {
      * @param owner
      */
     public void addCompany(String name, String city, String postcode, String street, String house, int owner) {
-        this.contacts.add(new Company(name, new Address(city, postcode, street, house), this.contacts.get(owner)));
+        this.contacts.add(new Company(new Name(name), new Address(city, postcode, street, house), this.contacts.get(owner)));
     }
     /*
      * Print all contacts.
