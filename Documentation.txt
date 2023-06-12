@@ -1,0 +1,7 @@
+There are exactly two types of contacts; persons and companies. They both have an address and a name so an abstract parent class "Contact" should provide universal methods to perform operations on these attributes.
+A person doesn't have any distinguishing attributes or methods in this current version and just provides a person specific constructor.
+A company also has an owner (a Person object or another Company object) and therefore provides getters and setters for this attribute in addition to the company specific constructors.
+Any contact needs a name (a first name in the case of a person). All other attributes are optional as a user might not have all the required information or might not want to enter it.
+
+The code was originally written in Neovim (Linux) and Visual Studio Code (Windows) and tested using jdk-11.0.16.101.
+./src/main.java contains a main method with a built-in manual and instructions on how to use the application.
