@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 import Directory.src.Directory;
 
+/**
+ * CLI application implementing the Directory module
+ */
 public class Main {
 
     
@@ -16,12 +19,13 @@ public class Main {
         Directory directory = new Directory();
         boolean shouldQuit = false;
 
-        System.out.println("Directory Manager v.1.0.0");
+        System.out.println("Directory Manager v.1.0.1");
         System.out.println("Type `help' to list all commands.");
 
         Scanner scanner = new Scanner(System.in, "UTF-8");
         String command = "";
 
+        // Main programme loop
         try {
             while (!shouldQuit) {
                 System.out.printf("> ");
@@ -63,6 +67,11 @@ public class Main {
         }
     }
 
+    /**
+     * Mutating method that allows the user to add a new contact to the directory via a CLI
+     * @param directory
+     * @param scanner
+     */
     static void mutCreateContactCLI(Directory directory, Scanner scanner) {
         String forename = "", surname = "", city = "", street = "", postcode = "", house = "";
         char type;
@@ -128,7 +137,11 @@ public class Main {
             System.out.printf("Error: %s - Unable to create contact\r\n", e);
         }
     }
-
+    /**
+     * Mutating method that allows the user to delete a contact from the directory via a CLI
+     * @param directory
+     * @param scanner
+     */
     static void mutDeleteContactCLI(Directory directory, Scanner scanner) {
         try{
             String userInput = "";
@@ -148,7 +161,11 @@ public class Main {
             System.out.printf("Error: %s\r\n", e);
         }
     }
-
+    /**
+     * Method that allows the user to search the directory (not fuzzy bc too much work)
+     * @param directory
+     * @param scanner
+     */
     static void searchCLI(Directory directory, Scanner scanner) {
         try{
             System.out.printf("Please enter a search term: ");
@@ -159,7 +176,9 @@ public class Main {
             System.out.printf("Error: %s\r\n", e);
         }
     }
-
+    /**
+     * Method to print the help menu
+     */
     static void printHelp() {
         System.out.println("add\t\t: add a new contact to the directory");
         System.out.println("rm\t\t: remove a contact from the directory");

@@ -17,7 +17,7 @@ public abstract class Contact {
      * Every type of contact has an address.
      * There is only one kind of address.
      */
-    protected Address address;
+    Address address;
     /**
      * Setter for an object's name
      * @param name
@@ -51,7 +51,7 @@ public abstract class Contact {
      * All contacts need a name and an address.
      * @param address
      */
-    protected Contact(Name name, Address address) {
+    Contact(Name name, Address address) {
         this.name = name;
         this.address = address;
     }

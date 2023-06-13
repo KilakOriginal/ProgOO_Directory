@@ -43,7 +43,7 @@ public class Directory {
      * Print all contacts.
      */
     public void printContacts() {
-        for (int i = 0; i < this.contacts.size(); ++i) {
+        for (int i = 0; i < this.contacts.size(); i++) {
             System.out.printf("\tContact %d:\r\n%s\n\n", i+1, this.contacts.get(i).toString());
         }
     }
@@ -55,15 +55,15 @@ public class Directory {
         System.out.printf("Searching for \"%s\"...\r\n", query);
         ArrayList<Integer> matches = new ArrayList<Integer>();
 
-        for (int i = 0; i < this.contacts.size(); ++i) {
+        for (int i = 0; i < this.contacts.size(); i++) {
             if (this.contacts.get(i).toString().contains(query)) { matches.add(i); }
         }
 
         if (matches.size() <= 0) { System.out.println("No matches."); }
         else {
             System.out.println("The following contacts match your query:");
-            for (int i = 0; i < matches.size(); ++i) {
-                System.out.printf("\tContact %d:\r\n%s\n\n", i+1, this.contacts.get(i).toString());
+            for (int i = 0; i < matches.size(); i++) {
+                System.out.printf("\tMatch %d:\r\n%s\n\n", i+1, this.contacts.get(matches.get(i)).toString());
             }
         }
     }
